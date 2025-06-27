@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nostalágape</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: white;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    .frase {
+      font-family: 'Georgia', serif;
+      font-size: 2em;
+      color: red;
+      opacity: 0;
+      transition: opacity 1.5s ease;
+      text-align: center;
+      padding: 1em;
+    }
+
+    body:hover .frase {
+      opacity: 1;
+    }
+
+    /* Para móviles: mostrar al tocar */
+    body:active .frase,
+    body.touch-active .frase {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body ontouchstart="this.classList.add('touch-active')">
+  <div class="frase">Te amo como solo el tiempo puede trillar</div>
+</body>
+</html>
